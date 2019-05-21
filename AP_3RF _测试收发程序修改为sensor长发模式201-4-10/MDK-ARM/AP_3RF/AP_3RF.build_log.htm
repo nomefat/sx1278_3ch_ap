@@ -1,0 +1,125 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.21.1.0
+Copyright (C) 2016 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 55 Administrator, 55, LIC=03CX7-EH5ZD-ZWI2V-PP222-AZNPF-I3WIV
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.21a
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 3 (build 300)
+Assembler:       Armasm.exe V5.06 update 3 (build 300)
+Linker/Locator:  ArmLink.exe V5.06 update 3 (build 300)
+Library Manager: ArmAr.exe V5.06 update 3 (build 300)
+Hex Converter:   FromElf.exe V5.06 update 3 (build 300)
+CPU DLL:         SARMCM3.DLL V5.21a
+Dialog DLL:      DCM.DLL V1.13.8.0
+Target DLL:      Segger\JL2CM3.dll V2.99.23.0
+Dialog DLL:      TCM.DLL V1.14.14.0
+ 
+<h2>Project:</h2>
+E:\工作\AP_3RF\AP_3RF _测试收发程序修改为sensor长发模式201-4-10\MDK-ARM\AP_3RF.uvprojx
+Project File Date:  07/05/2018
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 3 (build 300)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'AP_3RF'
+compiling main.c...
+..\user\rf.h(100): warning:  #1295-D: Deprecated declaration debug_rf_send_syn_ok - give arg types
+  void debug_rf_send_syn_ok();
+..\user\debug_uart.h(9): warning:  #1295-D: Deprecated declaration print_version - give arg types
+  void print_version();
+..\user\debug_uart.h(14): warning:  #1295-D: Deprecated declaration start_from_debug_dma_receive - give arg types
+  void start_from_debug_dma_receive();
+../Src/main.c(89): warning:  #1295-D: Deprecated declaration power_on_auto_send_test - give arg types
+  extern void power_on_auto_send_test();
+../Src/main.c: 4 warnings, 0 errors
+compiling ap_s.c...
+..\user\rf.h(100): warning:  #1295-D: Deprecated declaration debug_rf_send_syn_ok - give arg types
+  void debug_rf_send_syn_ok();
+..\user\debug_uart.h(9): warning:  #1295-D: Deprecated declaration print_version - give arg types
+  void print_version();
+..\user\debug_uart.h(14): warning:  #1295-D: Deprecated declaration start_from_debug_dma_receive - give arg types
+  void start_from_debug_dma_receive();
+..\user\ap_s.c(41): warning:  #177-D: variable "time" was declared but never referenced
+  	int time = 0 ,t;
+..\user\ap_s.c(41): warning:  #177-D: variable "t" was declared but never referenced
+  	int time = 0 ,t;
+..\user\ap_s.c(80): warning:  #177-D: variable "time" was declared but never referenced
+  	int time = 0 ,t;
+..\user\ap_s.c(80): warning:  #177-D: variable "t" was declared but never referenced
+  	int time = 0 ,t;
+..\user\ap_s.c(164): warning:  #177-D: variable "freq" was declared but never referenced
+  	uint32_t freq;
+..\user\ap_s.c: 8 warnings, 0 errors
+compiling rf.c...
+..\user\rf.h(100): warning:  #1295-D: Deprecated declaration debug_rf_send_syn_ok - give arg types
+  void debug_rf_send_syn_ok();
+..\user\rf.c(346): warning:  #177-D: variable "i" was declared but never referenced
+  	uint32_t i;
+..\user\rf.c(480): warning:  #177-D: variable "pstr" was declared but never referenced
+  	char *pstr;
+..\user\rf.c(481): warning:  #177-D: variable "error" was declared but never referenced
+  	static int error;
+..\user\rf.c(684): warning:  #177-D: variable "pstr" was declared but never referenced
+  	char *pstr;
+..\user\rf.c(685): warning:  #177-D: variable "error" was declared but never referenced
+  	static int error;
+..\user\rf.c(840): warning:  #177-D: variable "pstr" was declared but never referenced
+  	char *pstr;
+..\user\rf.c(841): warning:  #177-D: variable "error" was declared but never referenced
+  	static int error;
+..\user\rf.c(331): warning:  #550-D: variable "send_timeout" was set but never used
+  static uint32_t send_timeout = 0;
+..\user\rf.c: 9 warnings, 0 errors
+compiling debug_uart.c...
+..\user\debug_uart.h(9): warning:  #1295-D: Deprecated declaration print_version - give arg types
+  void print_version();
+..\user\debug_uart.h(14): warning:  #1295-D: Deprecated declaration start_from_debug_dma_receive - give arg types
+  void start_from_debug_dma_receive();
+..\user\rf.h(100): warning:  #1295-D: Deprecated declaration debug_rf_send_syn_ok - give arg types
+  void debug_rf_send_syn_ok();
+..\user\debug_uart.c(157): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "uint8_t *"
+  	HAL_UART_Receive_DMA(&huart6,debug_uart_dma_buff,
+_LEN);	 //?蚩?DMA????
+..\user\debug_uart.c(177): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "uint8_t *"
+  	HAL_UART_Receive_DMA(&huart6,debug_uart_dma_buff,
+_LEN);	 //?蚩?DMA????
+..\user\debug_uart.c(231): warning:  #111-D: statement is unreachable
+  	return 0;
+..\user\debug_uart.c(191): warning:  #177-D: variable "timeout" was declared but never referenced
+  	int timeout = 0;
+..\user\debug_uart.c(557): warning:  #167-D: argument of type "volatile struct_test1000p *" is incompatible with parameter of type "void *"
+  		RF1_Send_packet(&test1000p);
+..\user\debug_uart.c(606): warning:  #167-D: argument of type "volatile struct_test1000p *" is incompatible with parameter of type "void *"
+  		RF1_Send_packet(&test1000p);
+..\user\debug_uart.c: 9 warnings, 0 errors
+linking...
+Program Size: Code=29944 RO-data=2752 RW-data=504 ZI-data=7424  
+FromELF: creating hex file...
+After Build - User command #1: C:/keil_v5/ARM/ARMCC/bin/fromelf.exe  --bin -o AP_3RF.bin ./AP_3RF/AP_3RF.axf
+"AP_3RF\AP_3RF.axf" - 0 Error(s), 30 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.0.1.pack
+                ARM::CMSIS:CORE:5.0.1
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.0.1
+
+<h2>Collection of Component include folders:</h2>
+  E:\工作\AP_3RF\AP_3RF _测试收发程序修改为sensor长发模式201-4-10\MDK-ARM\RTE
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include
+  C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.0.1
+Build Time Elapsed:  00:00:35
+</pre>
+</body>
+</html>

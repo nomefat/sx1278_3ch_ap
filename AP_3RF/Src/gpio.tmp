@@ -1,0 +1,162 @@
+
+#n/** Configure pins as #n #t#t #t* Analog #n #t#t #t* Input #n #t#t #t* Output#n #t#t #t* EVENT_OUT#n #t#t #t* EXTI
+*/
+static void MX_GPIO_Init(void)
+{
+#n
+#tGPIO_InitTypeDef GPIO_InitStruct;
+#n#t/* GPIO Ports Clock Enable */
+#t__HAL_RCC_GPIOI_CLK_ENABLE();
+#t__HAL_RCC_GPIOF_CLK_ENABLE();
+#t__HAL_RCC_GPIOH_CLK_ENABLE();
+#t__HAL_RCC_GPIOC_CLK_ENABLE();
+#t__HAL_RCC_GPIOA_CLK_ENABLE();
+#t__HAL_RCC_GPIOE_CLK_ENABLE();
+#t__HAL_RCC_GPIOB_CLK_ENABLE();
+#t__HAL_RCC_GPIOD_CLK_ENABLE();
+#t__HAL_RCC_GPIOG_CLK_ENABLE();
+#n#t/*Configure GPIO pin Output Level */
+#tHAL_GPIO_WritePin(GPIOI, RF2_RESETN_Pin|RF2_TRX_CTRL_Pin, GPIO_PIN_SET);
+#n#t/*Configure GPIO pin Output Level */
+#tHAL_GPIO_WritePin(GPIOF, RF2_DIO5_Pin|RF2_NSS_Pin|RF1_EN_Pin, GPIO_PIN_RESET);
+#n#t/*Configure GPIO pin Output Level */
+#tHAL_GPIO_WritePin(RF2_EN_GPIO_Port, RF2_EN_Pin, GPIO_PIN_RESET);
+#n#t/*Configure GPIO pin Output Level */
+#tHAL_GPIO_WritePin(GPIOA, RF1_TRX_CTRL_Pin|RF1_NSS_Pin, GPIO_PIN_SET);
+#n#t/*Configure GPIO pin Output Level */
+#tHAL_GPIO_WritePin(RF1_RESETN_GPIO_Port, RF1_RESETN_Pin, GPIO_PIN_SET);
+#n#t/*Configure GPIO pin Output Level */
+#tHAL_GPIO_WritePin(GPIOE, WDI_Pin|RF3_NSS_Pin, GPIO_PIN_RESET);
+#n#t/*Configure GPIO pin Output Level */
+#tHAL_GPIO_WritePin(GPIOH, RF3_RESETN_Pin|RF3_TRX_CTRL_Pin, GPIO_PIN_SET);
+#n#t/*Configure GPIO pin Output Level */
+#tHAL_GPIO_WritePin(RF3_EN_GPIO_Port, RF3_EN_Pin, GPIO_PIN_RESET);
+#n#t/*Configure GPIO pin Output Level */
+#tHAL_GPIO_WritePin(PWRKEY_M35_GPIO_Port, PWRKEY_M35_Pin, GPIO_PIN_RESET);
+#n#t/*Configure GPIO pin Output Level */
+#tHAL_GPIO_WritePin(GPIOG, LED1_Pin|LED2_Pin|LED3_Pin|LED4_Pin #n#t#t#t#t#t#t#t#t#t#t#t#t#t|LED5_Pin, GPIO_PIN_SET);
+#n#t/*Configure GPIO pins : RF2_RESETN_Pin RF2_TRX_CTRL_Pin */
+#tGPIO_InitStruct.Pin = RF2_RESETN_Pin|RF2_TRX_CTRL_Pin;
+#tGPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
+#tGPIO_InitStruct.Pull = GPIO_NOPULL;
+#tGPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+#tHAL_GPIO_Init(GPIOI, &GPIO_InitStruct);
+#n#t/*Configure GPIO pins : RF2_DIO5_Pin RF2_NSS_Pin */
+#tGPIO_InitStruct.Pin = RF2_DIO5_Pin|RF2_NSS_Pin;
+#tGPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+#tGPIO_InitStruct.Pull = GPIO_NOPULL;
+#tGPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+#tHAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
+#n#t/*Configure GPIO pins : RF2_DIO4_Pin RF2_DIO3_Pin RF2_DIO2_Pin RF2_DIO1_Pin */
+#tGPIO_InitStruct.Pin = RF2_DIO4_Pin|RF2_DIO3_Pin|RF2_DIO2_Pin|RF2_DIO1_Pin;
+#tGPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+#tGPIO_InitStruct.Pull = GPIO_NOPULL;
+#tHAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
+#n#t/*Configure GPIO pin : RF2_DIO0_EXIT_Pin */
+#tGPIO_InitStruct.Pin = RF2_DIO0_EXIT_Pin;
+#tGPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+#tGPIO_InitStruct.Pull = GPIO_PULLUP;
+#tHAL_GPIO_Init(RF2_DIO0_EXIT_GPIO_Port, &GPIO_InitStruct);
+#n#t/*Configure GPIO pin : RF2_EN_Pin */
+#tGPIO_InitStruct.Pin = RF2_EN_Pin;
+#tGPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+#tGPIO_InitStruct.Pull = GPIO_NOPULL;
+#tGPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+#tHAL_GPIO_Init(RF2_EN_GPIO_Port, &GPIO_InitStruct);
+#n#t/*Configure GPIO pin : RF1_TRX_CTRL_Pin */
+#tGPIO_InitStruct.Pin = RF1_TRX_CTRL_Pin;
+#tGPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
+#tGPIO_InitStruct.Pull = GPIO_NOPULL;
+#tGPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+#tHAL_GPIO_Init(RF1_TRX_CTRL_GPIO_Port, &GPIO_InitStruct);
+#n#t/*Configure GPIO pin : RF1_DIO5_Pin */
+#tGPIO_InitStruct.Pin = RF1_DIO5_Pin;
+#tGPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+#tGPIO_InitStruct.Pull = GPIO_NOPULL;
+#tHAL_GPIO_Init(RF1_DIO5_GPIO_Port, &GPIO_InitStruct);
+#n#t/*Configure GPIO pins : RF1_DIO4_Pin RF3_DIO3_Pin RF1_DIO2_Pin RF1_DIO1_Pin #n#t#t#t#t#t#t#t#t#t#t#t#t#t RF3_DIO2_Pin RF3_DIO1_Pin */
+#tGPIO_InitStruct.Pin = RF1_DIO4_Pin|RF3_DIO3_Pin|RF1_DIO2_Pin|RF1_DIO1_Pin #n#t#t#t#t#t#t#t#t#t#t#t#t#t|RF3_DIO2_Pin|RF3_DIO1_Pin;
+#tGPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+#tGPIO_InitStruct.Pull = GPIO_NOPULL;
+#tHAL_GPIO_Init(GPIOH, &GPIO_InitStruct);
+#n#t/*Configure GPIO pin : RF1_DIO0_EXIT_Pin */
+#tGPIO_InitStruct.Pin = RF1_DIO0_EXIT_Pin;
+#tGPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+#tGPIO_InitStruct.Pull = GPIO_NOPULL;
+#tHAL_GPIO_Init(RF1_DIO0_EXIT_GPIO_Port, &GPIO_InitStruct);
+#n#t/*Configure GPIO pin : RF1_NSS_Pin */
+#tGPIO_InitStruct.Pin = RF1_NSS_Pin;
+#tGPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+#tGPIO_InitStruct.Pull = GPIO_NOPULL;
+#tGPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+#tHAL_GPIO_Init(RF1_NSS_GPIO_Port, &GPIO_InitStruct);
+#n#t/*Configure GPIO pin : RF1_RESETN_Pin */
+#tGPIO_InitStruct.Pin = RF1_RESETN_Pin;
+#tGPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+#tGPIO_InitStruct.Pull = GPIO_NOPULL;
+#tGPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+#tHAL_GPIO_Init(RF1_RESETN_GPIO_Port, &GPIO_InitStruct);
+#n#t/*Configure GPIO pin : RF1_EN_Pin */
+#tGPIO_InitStruct.Pin = RF1_EN_Pin;
+#tGPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+#tGPIO_InitStruct.Pull = GPIO_NOPULL;
+#tGPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+#tHAL_GPIO_Init(RF1_EN_GPIO_Port, &GPIO_InitStruct);
+#n#t/*Configure GPIO pin : WDI_Pin */
+#tGPIO_InitStruct.Pin = WDI_Pin;
+#tGPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+#tGPIO_InitStruct.Pull = GPIO_NOPULL;
+#tGPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+#tHAL_GPIO_Init(WDI_GPIO_Port, &GPIO_InitStruct);
+#n#t/*Configure GPIO pin : RF3_NSS_Pin */
+#tGPIO_InitStruct.Pin = RF3_NSS_Pin;
+#tGPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+#tGPIO_InitStruct.Pull = GPIO_NOPULL;
+#tGPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+#tHAL_GPIO_Init(RF3_NSS_GPIO_Port, &GPIO_InitStruct);
+#n#t/*Configure GPIO pin : RF3_DIO5_Pin */
+#tGPIO_InitStruct.Pin = RF3_DIO5_Pin;
+#tGPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+#tGPIO_InitStruct.Pull = GPIO_NOPULL;
+#tHAL_GPIO_Init(RF3_DIO5_GPIO_Port, &GPIO_InitStruct);
+#n#t/*Configure GPIO pins : RF3_DIO4_Pin RF3_DIO3B11_Pin */
+#tGPIO_InitStruct.Pin = RF3_DIO4_Pin|RF3_DIO3B11_Pin;
+#tGPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+#tGPIO_InitStruct.Pull = GPIO_NOPULL;
+#tHAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+#n#t/*Configure GPIO pin : RF3_DIO0_EXIT_Pin */
+#tGPIO_InitStruct.Pin = RF3_DIO0_EXIT_Pin;
+#tGPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+#tGPIO_InitStruct.Pull = GPIO_PULLUP;
+#tHAL_GPIO_Init(RF3_DIO0_EXIT_GPIO_Port, &GPIO_InitStruct);
+#n#t/*Configure GPIO pins : RF3_RESETN_Pin RF3_TRX_CTRL_Pin */
+#tGPIO_InitStruct.Pin = RF3_RESETN_Pin|RF3_TRX_CTRL_Pin;
+#tGPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
+#tGPIO_InitStruct.Pull = GPIO_NOPULL;
+#tGPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+#tHAL_GPIO_Init(GPIOH, &GPIO_InitStruct);
+#n#t/*Configure GPIO pin : RF3_EN_Pin */
+#tGPIO_InitStruct.Pin = RF3_EN_Pin;
+#tGPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+#tGPIO_InitStruct.Pull = GPIO_NOPULL;
+#tGPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+#tHAL_GPIO_Init(RF3_EN_GPIO_Port, &GPIO_InitStruct);
+#n#t/*Configure GPIO pin : PWRKEY_M35_Pin */
+#tGPIO_InitStruct.Pin = PWRKEY_M35_Pin;
+#tGPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+#tGPIO_InitStruct.Pull = GPIO_NOPULL;
+#tGPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+#tHAL_GPIO_Init(PWRKEY_M35_GPIO_Port, &GPIO_InitStruct);
+#n#t/*Configure GPIO pins : LED1_Pin LED2_Pin LED3_Pin LED4_Pin #n#t#t#t#t#t#t#t#t#t#t#t#t#t LED5_Pin */
+#tGPIO_InitStruct.Pin = LED1_Pin|LED2_Pin|LED3_Pin|LED4_Pin #n#t#t#t#t#t#t#t#t#t#t#t#t#t|LED5_Pin;
+#tGPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
+#tGPIO_InitStruct.Pull = GPIO_NOPULL;
+#tGPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+#tHAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
+#n#t/* EXTI interrupt init*/
+#tHAL_NVIC_SetPriority(EXTI3_IRQn, 1, 0);
+#tHAL_NVIC_EnableIRQ(EXTI3_IRQn);#n
+#tHAL_NVIC_SetPriority(EXTI9_5_IRQn, 1, 0);
+#tHAL_NVIC_EnableIRQ(EXTI9_5_IRQn);#n#n
+}
+#n

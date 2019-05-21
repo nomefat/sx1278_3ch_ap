@@ -1,0 +1,21 @@
+uint16_t sf[][] = {400,};
+
+
+
+
+
+
+head id cmd sf bw freq 
+2    2   1  2   2   2 
+
+head id cmd sf bw freq 
+2    2   1  2   2   2 
+
+
+head id cmd packet_count packet_seq rssi a
+2    2   1    2            2         1   1
+
+
+
+head id cmd packet_count packet_seq rssi a
+2    2   1    2            2         1   1
